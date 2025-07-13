@@ -1,13 +1,12 @@
-# k8s/service.yaml
 apiVersion: v1
 kind: Service
 metadata:
   name: springboot-mvc-demo
 spec:
-  type: NodePort
+  type: NodePort  # 👈 Important
   selector:
     app: springboot-mvc-demo
   ports:
-    - protocol: TCP
-      port: 9090
-      targetPort: 9090
+    - port: 9090         # Spring Boot app port
+      targetPort: 9090   # Container port
+      nodePort: 53124    # 👈 This is what you hit from localhost
