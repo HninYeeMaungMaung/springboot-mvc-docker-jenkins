@@ -19,9 +19,7 @@ pipeline {
         stage('Deploy to Minikube') {
             steps {
                 script {
-                    // Optionally delete old pod (forces new one to pull updated image)
-                    sh 'kubectl delete pod -l app=springboot-mvc-demo --ignore-not-found --grace-period=0 --force'
-                    // Reapply the deployment YAML
+                    sh 'kubectl delete pod -l app=springboot-mvc-demo --grace-period=0 --force || true'
                     sh 'kubectl apply -f k8s/deployment.yaml'
                     sh 'kubectl apply -f k8s/hpa.yaml'
                 }
