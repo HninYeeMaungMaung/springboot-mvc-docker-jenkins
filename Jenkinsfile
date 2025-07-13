@@ -13,10 +13,8 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-        sh '''
-          sh 'eval $(minikube docker-env)'
-          sh 'docker build --no-cache -t springboot-mvc-demo:latest .'
-        '''
+        sh 'eval $(minikube docker-env)'
+        sh 'docker build --no-cache -t springboot-mvc-demo:latest .'
       }
     }
     stage('Deploy to Minikube') {
