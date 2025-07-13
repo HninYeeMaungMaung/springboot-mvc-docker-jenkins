@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "springboot-mvc-demo:latest",
+        IMAGE_NAME = "springboot-mvc-demo:latest"
         PATH = "/opt/homebrew/opt/maven/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
     }
 
