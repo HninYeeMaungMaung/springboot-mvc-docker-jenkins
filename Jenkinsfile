@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-     PATH = "/opt/homebrew/Cellar/maven/3.9.10/libexec"
+     PATH = "/opt/homebrew/opt/maven/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
   }
 
   stages {
