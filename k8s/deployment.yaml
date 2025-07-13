@@ -18,3 +18,8 @@ spec:
           imagePullPolicy: Never       # 👈 ADD THIS LINE
           ports:
             - containerPort: 9090
+          env:
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
