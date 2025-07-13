@@ -9,4 +9,4 @@ spec:
   ports:
     - port: 9090         # Spring Boot app port
       targetPort: 9090   # Container port
-      nodePort: 53124    # 👈 This is what you hit from localhost
+      nodePort: 31090    # 👈 This is what you hit from localhost
