@@ -21,6 +21,7 @@ pipeline {
                 script {
                     sh 'kubectl delete pod -l app=springboot-mvc-demo --grace-period=0 --force || true'
                     sh 'kubectl apply -f k8s/deployment.yaml'
+                    sh 'kubectl apply -f k8s/service.yaml'
                     sh 'kubectl apply -f k8s/hpa.yaml'
                 }
             }
