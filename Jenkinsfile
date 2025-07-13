@@ -23,7 +23,15 @@ pipeline {
                     sh 'kubectl delete pod -l app=springboot-mvc-demo --ignore-not-found --grace-period=0 --force'
                     // Reapply the deployment YAML
                     sh 'kubectl apply -f k8s/deployment.yaml'
+                    sh 'kubectl apply -f k8s/hpa.yaml'
                 }
+            }
+        }
+
+        stage('Monitor Status') {
+            steps {
+                sh 'kubectl get pods'
+                sh 'kubectl get hpa'
             }
         }
     }
