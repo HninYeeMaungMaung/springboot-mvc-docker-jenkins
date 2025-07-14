@@ -15,7 +15,7 @@ spec:
       containers:
         - name: springboot-mvc-demo
           image: springboot-mvc-demo:latest
-          imagePullPolicy: Never       # 👈 ADD THIS LINE
+          imagePullPolicy: Never
           ports:
             - containerPort: 9090
           env:

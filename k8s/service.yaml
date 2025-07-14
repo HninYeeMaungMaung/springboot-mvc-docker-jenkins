@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: springboot-mvc-demo
 spec:
-  type: NodePort  # 👈 Important
+  type: NodePort
   selector:
     app: springboot-mvc-demo
   ports:
     - port: 9090         # Spring Boot app port
       targetPort: 9090   # Container port
-      nodePort: 31090    # 👈 This is what you hit from localhost
+      nodePort: 31090    # This is what you hit from localhost
